@@ -1,0 +1,213 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+  background-color: #000000d8;
+  border: solid 9px #333;
+  height: 100vh;
+}
+.game-board{
+width: 80%;
+height: 800px;
+border: solid 9px #333;
+margin: 0 auto;
+position: relative;
+overflow: hidden;
+background-color: black;
+}
+.pipe{
+position: absolute;
+bottom: -43px;
+width: 200px;
+animation: opacity 2s;
+animation: pipe-animation 2.5s infinite linear 2s, opacity 9s infinite linear; 
+
+}
+#sonic{
+  width: 80px;
+  position: absolute;
+  bottom: 0px;
+  
+}
+.jump{
+  animation: jump 900ms ease-out;
+ 
+}
+.fundo{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+.control .botao{
+  width: 100%;
+display: flex;
+justify-content:right;
+align-items: center;
+height: 30%;
+gap: 30%;
+
+
+
+}
+#reiniciar{
+display: flex;
+justify-content: center;
+margin-top: 1%;
+gap: 3%;
+}
+.botao{
+position: absolute;
+margin-top: 5%;
+margin-right: 15%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+width: 20%;
+
+}
+
+.botao_game{
+
+ 
+  height: 180px;
+  width: 190px;
+  border-radius: 50%;
+  border: solid 9px #484848;
+
+}
+.control button{
+  border: none;
+background-color:#484848;
+  padding: 10px;
+  
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 30px;
+}
+.meio{
+  display:flex; 
+  justify-content: space-between; 
+  gap: 15%;
+}
+
+@keyframes opacity{
+
+from{
+opacity: 0;
+
+
+}
+to{
+opacity: 1;
+
+}
+
+}
+
+@keyframes jump{
+          0%{
+      bottom: 0;
+      }
+      25%{
+        bottom: 120px;
+      }
+     
+      30%{
+        bottom: 150px;
+      }
+      
+      50%{
+        bottom: 180px;
+      }
+      75%{
+      bottom: 100px;
+      }
+        100%{
+          bottom: 0;
+        }
+
+    }
+
+@keyframes pipe-animation {
+    from{
+    right: -245px;
+  }
+    to{
+  right: 100%;
+  }
+}
+
+/* -------MOBILE------- */
+@media(max-width: 450px){
+
+.game-board{
+height: 400px;
+width: 100%;
+border: none;
+border-bottom:solid 9px #333;
+}
+.botao{
+  margin-top: 45%;
+  width:100%;
+  margin-right: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.botao_game{
+width: 150px;
+height: 150px;
+
+}
+.control button{
+  margin-top: 1%;
+}
+.pipe{
+ 
+  animation: opacity 2s;
+animation: pipe-animation 2.1s infinite linear 2s, opacity 9s infinite linear; 
+ 
+}
+.jump{
+  animation: jump 1100ms ease-out;
+ 
+}
+.meio{
+  display:flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  
+  
+}
+.control{
+  width:100%;
+display: flex;
+justify-content: center;
+
+position: relative;
+
+
+
+
+}
+
+}
+@media(max-width: 375px){
+
+  .control .botao{
+  
+  margin-top: 90px;
+ 
+  
+  
+  
+  }
+}
